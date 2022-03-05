@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupcakes!</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    {% for msg in get_flashed_messages() %}
+    <div class="alert alert-info">{{ msg }}</div>
+    {% endfor %}
+    <div class="container">
+        <h1>All the cupcakes!</h1>
+
+        <ul class="cupcakes-list">
+            <!-- Cupcakes in data base will display -->
+        </ul>
+
+
+        <h2>Add a cupcake!</h2>
+        
+        <!-- Form for submitting new cupcake -->
+        <form class="new-cupcake-form">
+            <div>
+                <label for="flavor">Flavor: </label>
+                <input name="flavor" id="flavor">
+            </div>
+        
+            <div>
+                <label for="size">Size: </label>
+                <input name="size" id="size">
+            </div>
+        
+            <div>
+                <label for="rating">Rating: </label>
+                <input type="number" name="rating" id="rating">
+            </div>
+        
+            <div>
+                <label for="image">Image: </label>
+                <input name="image" id="image">
+            </div>
+        
+            <button class="btn btn-primary" type="submit">Add!</button>
+        </form>
+
+    </div>
+
+    <script src="https://unpkg.com/jquery"></script>
+    <script src="https://unpkg.com/axios/dist/axios.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
